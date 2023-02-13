@@ -4,6 +4,8 @@ namespace Inventory
 {
     internal static class DatabaseBase
     {
+        public static bool wantsToRemember;
+        private static string connectionString = "Data Source=./Database/inventory.db";
         public static async Task<string> AddAdmin(string username, string password)
         {
             if (!await HasRegisteredAdmin())
