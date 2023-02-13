@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+﻿using System.Media;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Inventory
 {
@@ -29,6 +21,9 @@ namespace Inventory
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
+        public static int itemscount;
+        public static decimal money;
+        public static int customerscount;
         public MainInterface()
         {
             InitializeComponent();
@@ -39,6 +34,7 @@ namespace Inventory
         {
             loggedinuserLBL.Text = (await Database.GetCredentials())[0];
             PopulateTables();
+            UpdateLabels();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -94,7 +90,7 @@ namespace Inventory
 
         private void resizeinterfaceBTN_Click(object sender, EventArgs e)
         {
-            this.Size = (this.MaximumSize == this.Size) ? this.MinimumSize: this.MaximumSize;
+            this.Size = (this.MaximumSize == this.Size) ? this.MinimumSize : this.MaximumSize;
         }
 
         private void guna2TabControl1_Selected(object sender, TabControlEventArgs e)
@@ -103,10 +99,21 @@ namespace Inventory
         }
         private async void PopulateTables()
         {
-            InventoryTable.DataSource = await Database.GetInventory(); 
-            customersTable.DataSource = await Database.GetCustomers();
+            var items = await Database.GetInventory();
+            var customers = await Database.GetCustomers();
+            InventoryTable.DataSource = items;
+            itemscount = items.Count;
+            customerscount = customers.Count;
+            money = items.Sum(x => x.price * x.inStock);
+            customersTable.DataSource = customers;
         }
+        private void UpdateLabels()
+        {
+            itemsCountLBL.Text = $"{itemscount} items";
+            totalmoneyLBL.Text = $"${money}";
+            customerscountLBL.Text = $"{customerscount} customers";
 
+        }
         private void label1_Click_1(object sender, EventArgs e)
         {
 
@@ -115,6 +122,73 @@ namespace Inventory
         private void customersTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void exitBTN_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void AddItemBTN_Click(object sender, EventArgs e)
+        {
+            if (Decimal.TryParse(itempricetextbox.Text, out decimal price) && int.TryParse(itemamounttext.Text, out int amount) && price >0 && amount >0)
+            {
+                await Database.AddItem(itemnametextbox.Text, price, amount);
+                RefreshAll();
+                itempricetextbox.Text = ""; itemamounttext.Text = "";itemnametextbox.Text = "";
+            }
+            else
+            {
+                SystemSounds.Beep.Play();
+                MessageBox.Show("Invalid parameters","Error adding item",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private async Task RefreshAll()
+        {
+            PopulateTables();
+            UpdateLabels();
+            InventoryTable.Refresh();
+            customersTable.Refresh();
+        }
+
+        private async void InventoryTable_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            var rowcells = InventoryTable.CurrentRow.Cells;
+            if (rowcells != null)
+            {
+                var myitem = new Item((int)rowcells[0].Value, (string)rowcells[1].Value, (decimal)rowcells[2].Value, (int)rowcells[3].Value, (int)rowcells[4].Value, (int)rowcells[5].Value);
+                await Database.UpdateItem(myitem);
+                RefreshAll();
+            }
+        }
+
+        private void InventoryTable_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            
+        }
+
+        private void InventoryTable_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if(e.ColumnIndex != 1)
+            {
+                int.TryParse((string)e.FormattedValue,out int result);
+                if (!(result > 0)) { e.Cancel = true; MessageBox.Show("Value cannot be negative!","Negative value error",MessageBoxButtons.OK,MessageBoxIcon.Error); }
+            }
+        }
+
+        private void InventoryTable_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
+        {
+
+        }
+
+        private void InventoryTable_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("the value you entered is not of correct format","invalid cell",MessageBoxButtons.OK,MessageBoxIcon.Error);
         }
     }
 }

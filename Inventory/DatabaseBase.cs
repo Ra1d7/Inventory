@@ -2,24 +2,8 @@
 
 namespace Inventory
 {
-    internal static class Database
+    internal static class DatabaseBase
     {
-        public static bool wantsToRemember;
-        private static string connectionString = "Data Source=./Database/inventory.db";
-        public static async Task<bool> HasRegisteredAdmin()
-        {
-            using (SQLiteConnection myconnection = new SQLiteConnection(connectionString))
-            {
-                if (!(myconnection.State == System.Data.ConnectionState.Open)) { myconnection.Open(); }
-                string query = "SELECT * FROM admin";
-                SQLiteCommand cmd = new SQLiteCommand(query, myconnection);
-                using (var resultReader = await cmd.ExecuteReaderAsync())
-                {
-                    bool containsRows = resultReader.Read();
-                    return containsRows;
-                }
-            }
-        }
         public static async Task<string> AddAdmin(string username, string password)
         {
             if (!await HasRegisteredAdmin())
@@ -38,10 +22,20 @@ namespace Inventory
             }
             return "didnt update";
         }
-        public static async Task<bool> LoginAdmin(string username, string password)
+        public static async Task<string> AddItem(string name, decimal price, int amount)
         {
-            if (username == (await GetCredentials())[0] && password == (await GetCredentials())[1]) { return true; }
-            return false;
+            using (SQLiteConnection myconnection = new SQLiteConnection(connectionString))
+            {
+                if (!(myconnection.State == System.Data.ConnectionState.Open)) { myconnection.Open(); }
+                string query = "INSERT INTO items ('name','price','instock') VALUES (@name, @price, @amount)";
+                SQLiteCommand cmd = new SQLiteCommand(query, myconnection);
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@name", name);
+                cmd.Parameters.AddWithValue("@price", price);
+                cmd.Parameters.AddWithValue("@amount", amount);
+                string updated = (await cmd.ExecuteNonQueryAsync()).ToString();
+                return "Updated\t" + updated;
+            }
         }
         public static async Task<string[]> GetCredentials()
         {
@@ -60,19 +54,6 @@ namespace Inventory
                     return credentials;
                 }
             };
-        }
-        public static async Task UpdateRemember()
-        {
-            using (SQLiteConnection myconnection = new SQLiteConnection(connectionString))
-            {
-                if (!(myconnection.State == System.Data.ConnectionState.Open)) { myconnection.Open(); }
-                string query = "UPDATE admin SET remember = @remember";
-                SQLiteCommand cmd = new SQLiteCommand(query, myconnection);
-                cmd.CommandText = query;
-                cmd.Parameters.AddWithValue("@remember", wantsToRemember.ToString());
-                string updated = (await cmd.ExecuteNonQueryAsync()).ToString();
-                myconnection.Close();
-            }
         }
         public static async Task<List<Customer>> GetCustomers()
         {
@@ -124,20 +105,24 @@ namespace Inventory
                 }
             };
         }
-        public static async Task<string> AddItem(string name, decimal price, int amount)
+        public static async Task<bool> HasRegisteredAdmin()
         {
             using (SQLiteConnection myconnection = new SQLiteConnection(connectionString))
             {
                 if (!(myconnection.State == System.Data.ConnectionState.Open)) { myconnection.Open(); }
-                string query = "INSERT INTO items ('name','price','instock') VALUES (@name, @price, @amount)";
+                string query = "SELECT * FROM admin";
                 SQLiteCommand cmd = new SQLiteCommand(query, myconnection);
-                cmd.CommandText = query;
-                cmd.Parameters.AddWithValue("@name", name);
-                cmd.Parameters.AddWithValue("@price", price);
-                cmd.Parameters.AddWithValue("@amount", amount);
-                string updated = (await cmd.ExecuteNonQueryAsync()).ToString();
-                return "Updated\t" + updated;
+                using (var resultReader = await cmd.ExecuteReaderAsync())
+                {
+                    bool containsRows = resultReader.Read();
+                    return containsRows;
+                }
             }
+        }
+        public static async Task<bool> LoginAdmin(string username, string password)
+        {
+            if (username == (await GetCredentials())[0] && password == (await GetCredentials())[1]) { return true; }
+            return false;
         }
         public static async Task UpdateItem(Item item)
         {
@@ -154,6 +139,19 @@ namespace Inventory
                 cmd.Parameters.AddWithValue("@reordered", item.reOrdered);
                 cmd.Parameters.AddWithValue("@Discounted", item.Discounted);
 
+                string updated = (await cmd.ExecuteNonQueryAsync()).ToString();
+                myconnection.Close();
+            }
+        }
+        public static async Task UpdateRemember()
+        {
+            using (SQLiteConnection myconnection = new SQLiteConnection(connectionString))
+            {
+                if (!(myconnection.State == System.Data.ConnectionState.Open)) { myconnection.Open(); }
+                string query = "UPDATE admin SET remember = @remember";
+                SQLiteCommand cmd = new SQLiteCommand(query, myconnection);
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@remember", wantsToRemember.ToString());
                 string updated = (await cmd.ExecuteNonQueryAsync()).ToString();
                 myconnection.Close();
             }
