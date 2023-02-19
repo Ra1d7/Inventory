@@ -172,5 +172,19 @@ namespace Inventory
                 myconnection.Close();
             }
         }
+        public static async Task RemoveCustomer(int id)
+        {
+            using (SQLiteConnection myconnection = new SQLiteConnection(connectionString))
+            {
+                if (!(myconnection.State == System.Data.ConnectionState.Open)) { myconnection.Open(); }
+                string query = "DELETE FROM customers WHERE id  = @id";
+                SQLiteCommand cmd = new SQLiteCommand(query, myconnection);
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@id", id);
+
+                string updated = (await cmd.ExecuteNonQueryAsync()).ToString();
+                myconnection.Close();
+            }
+        }
     }
 }

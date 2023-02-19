@@ -1,4 +1,6 @@
-﻿namespace Inventory
+﻿using System.Diagnostics;
+
+namespace Inventory
 {
     internal class Customer
     {
@@ -23,6 +25,19 @@
             this.name = name;
             this.productsBought = productsBought;
             this.amountBought = amountBought;
+        }
+        internal object GetProperty(int index)
+        {
+            switch (index)
+            {
+                case 0: return Id;
+                case 1: return name;
+                case 2: return phoneNumber;
+                case 3: return email;
+                case 4: return productsBought;
+                case 5: return amountBought;
+            }
+            return null;
         }
     }
 }

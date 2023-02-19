@@ -99,13 +99,21 @@ namespace Inventory
         }
         private async void PopulateTables()
         {
-            var items = await Database.GetInventory();
-            var customers = await Database.GetCustomers();
-            InventoryTable.DataSource = items;
-            itemscount = items.Count;
-            customerscount = customers.Count;
-            money = items.Sum(x => x.price * x.inStock);
-            customersTable.DataSource = customers;
+            try
+            {
+
+                var items = await Database.GetInventory();
+                var customers = await Database.GetCustomers();
+                InventoryTable.DataSource = items;
+                itemscount = items.Count;
+                customerscount = customers.Count;
+                money = items.Sum(x => x.price * x.inStock);
+                CustomersTable.DataSource = customers;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void UpdateLabels()
         {
@@ -131,16 +139,25 @@ namespace Inventory
 
         private async void AddItemBTN_Click(object sender, EventArgs e)
         {
-            if (Decimal.TryParse(itempricetextbox.Text, out decimal price) && int.TryParse(itemamounttext.Text, out int amount) && price > 0 && amount > 0)
+            try
             {
-                await Database.AddItem(itemnametextbox.Text, price, amount);
-                RefreshAll();
-                itempricetextbox.Text = ""; itemamounttext.Text = ""; itemnametextbox.Text = "";
+
+
+                if (Decimal.TryParse(itempricetextbox.Text, out decimal price) && int.TryParse(itemamounttext.Text, out int amount) && price > 0 && amount > 0)
+                {
+                    await Database.AddItem(itemnametextbox.Text, price, amount);
+                    RefreshAll();
+                    itempricetextbox.Text = ""; itemamounttext.Text = ""; itemnametextbox.Text = "";
+                }
+                else
+                {
+                    SystemSounds.Beep.Play();
+                    MessageBox.Show("Invalid parameters", "Error adding item", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                SystemSounds.Beep.Play();
-                MessageBox.Show("Invalid parameters", "Error adding item", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -153,7 +170,7 @@ namespace Inventory
             PopulateTables();
             UpdateLabels();
             InventoryTable.Refresh();
-            customersTable.Refresh();
+            CustomersTable.Refresh();
             SortByBox.Refresh();
             UpdateSortBox();
         }
@@ -161,11 +178,19 @@ namespace Inventory
         private async void InventoryTable_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             var rowcells = InventoryTable.CurrentRow.Cells;
-            if (rowcells != null)
+            try
             {
-                var myitem = new Item((int)rowcells[0].Value, (string)rowcells[1].Value, (decimal)rowcells[2].Value, (int)rowcells[3].Value, (int)rowcells[4].Value, (int)rowcells[5].Value);
-                await Database.UpdateItem(myitem);
-                RefreshAll();
+                if (rowcells != null)
+                {
+                    var myitem = new Item((int)rowcells[0].Value, (string)rowcells[1].Value, (decimal)rowcells[2].Value, (int)rowcells[3].Value, (int)rowcells[4].Value, (int)rowcells[5].Value);
+                    await Database.UpdateItem(myitem);
+                    RefreshAll();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -195,9 +220,17 @@ namespace Inventory
 
         private async void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var items = await Database.GetInventory();
-            InventoryTable.DataSource = DescToggleSwitch.Checked ? items.OrderByDescending(x => x.GetProperty(SortByBox.SelectedIndex)).ToList() : items.OrderBy(x => x.GetProperty(SortByBox.SelectedIndex)).ToList();
-            InventoryTable.Refresh();
+            try
+            {
+                var customers = await Database.GetCustomers();
+                CustomersTable.DataSource = guna2ToggleSwitch1.Checked ? customers.OrderByDescending(x => x.GetProperty(guna2ComboBox1.SelectedIndex)).ToList() : customers.OrderBy(x => x.GetProperty(guna2ComboBox1.SelectedIndex)).ToList();
+                CustomersTable.Refresh();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void SortByBox_DataSourceChanged(object sender, EventArgs e)
@@ -281,14 +314,47 @@ namespace Inventory
                 var item = new Item(id, EditName.Text, price, inStock, 0, 0);
                 try
                 {
-                await Database.UpdateItem(item);
-                textBoxes.ToList().ForEach(x => x.Text = "");
-                RefreshAll();
-                MessageBox.Show("Successfully Updated Records!","Records Update",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                }catch(Exception ex)
+                    await Database.UpdateItem(item);
+                    textBoxes.ToList().ForEach(x => x.Text = "");
+                    RefreshAll();
+                    MessageBox.Show("Successfully Updated Records!", "Records Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
+            }
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        //customer edit button
+        {
+            try
+            {
+                Guna2TextBox[] textBoxes = { CustomerID, CustomerName, CustomerPhone, CustomerEmail };
+                for (int i = 0; i < textBoxes.Length; i++)
+                {
+                    textBoxes[i].Text = CustomersTable.CurrentRow.Cells[i].Value.ToString();
+                }
+
+            }
+            catch
+            {
+                //no row selected
+            }
+        }
+
+        private async void guna2Button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                await Database.RemoveCustomer(Convert.ToInt32(CustomersTable.CurrentRow.Cells[0].Value));
+                RefreshAll();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
