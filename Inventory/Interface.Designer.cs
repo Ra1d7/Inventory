@@ -243,7 +243,7 @@
             this.ConfirmEdit.Name = "ConfirmEdit";
             this.ConfirmEdit.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.ConfirmEdit.Size = new System.Drawing.Size(131, 39);
-            this.ConfirmEdit.TabIndex = 16;
+            this.ConfirmEdit.TabIndex = 10;
             this.ConfirmEdit.Text = "Confirm";
             this.ConfirmEdit.Click += new System.EventHandler(this.ConfirmEdit_Click);
             // 
@@ -260,7 +260,7 @@
             this.EditBTN.Name = "EditBTN";
             this.EditBTN.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.EditBTN.Size = new System.Drawing.Size(131, 39);
-            this.EditBTN.TabIndex = 16;
+            this.EditBTN.TabIndex = 8;
             this.EditBTN.Text = "Edit selected";
             this.EditBTN.Click += new System.EventHandler(this.EditBTN_Click);
             // 
@@ -360,7 +360,7 @@
             this.RemoveItemBTN.Name = "RemoveItemBTN";
             this.RemoveItemBTN.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.RemoveItemBTN.Size = new System.Drawing.Size(131, 39);
-            this.RemoveItemBTN.TabIndex = 12;
+            this.RemoveItemBTN.TabIndex = 9;
             this.RemoveItemBTN.Text = "Remove Selected";
             this.RemoveItemBTN.Click += new System.EventHandler(this.RemoveItemBTN_Click);
             // 
@@ -416,7 +416,7 @@
             this.EditinStock.SelectedText = "";
             this.EditinStock.ShadowDecoration.CustomizableEdges = customizableEdges14;
             this.EditinStock.Size = new System.Drawing.Size(103, 25);
-            this.EditinStock.TabIndex = 4;
+            this.EditinStock.TabIndex = 3;
             // 
             // EditPrice
             // 
@@ -436,7 +436,7 @@
             this.EditPrice.SelectedText = "";
             this.EditPrice.ShadowDecoration.CustomizableEdges = customizableEdges16;
             this.EditPrice.Size = new System.Drawing.Size(100, 25);
-            this.EditPrice.TabIndex = 4;
+            this.EditPrice.TabIndex = 2;
             // 
             // EditName
             // 
@@ -456,7 +456,7 @@
             this.EditName.SelectedText = "";
             this.EditName.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.EditName.Size = new System.Drawing.Size(214, 25);
-            this.EditName.TabIndex = 4;
+            this.EditName.TabIndex = 1;
             // 
             // EditID
             // 
@@ -466,6 +466,7 @@
             this.EditID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.EditID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.EditID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditID.Enabled = false;
             this.EditID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.EditID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EditID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -476,7 +477,7 @@
             this.EditID.SelectedText = "";
             this.EditID.ShadowDecoration.CustomizableEdges = customizableEdges20;
             this.EditID.Size = new System.Drawing.Size(52, 25);
-            this.EditID.TabIndex = 4;
+            this.EditID.TabIndex = 0;
             // 
             // itemnametextbox
             // 
@@ -634,7 +635,7 @@
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges28;
             this.guna2Button4.Size = new System.Drawing.Size(124, 39);
-            this.guna2Button4.TabIndex = 35;
+            this.guna2Button4.TabIndex = 9;
             this.guna2Button4.Text = "Remove Selected";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
@@ -652,8 +653,9 @@
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges30;
             this.guna2Button1.Size = new System.Drawing.Size(124, 39);
-            this.guna2Button1.TabIndex = 34;
+            this.guna2Button1.TabIndex = 10;
             this.guna2Button1.Text = "Confirm";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2Button2
             // 
@@ -668,7 +670,7 @@
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges32;
             this.guna2Button2.Size = new System.Drawing.Size(124, 39);
-            this.guna2Button2.TabIndex = 33;
+            this.guna2Button2.TabIndex = 8;
             this.guna2Button2.Text = "Edit selected";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
@@ -779,7 +781,7 @@
             this.CustomerAddPhone.SelectedText = "";
             this.CustomerAddPhone.ShadowDecoration.CustomizableEdges = customizableEdges38;
             this.CustomerAddPhone.Size = new System.Drawing.Size(115, 25);
-            this.CustomerAddPhone.TabIndex = 22;
+            this.CustomerAddPhone.TabIndex = 5;
             // 
             // CustomerEmail
             // 
@@ -799,7 +801,7 @@
             this.CustomerEmail.SelectedText = "";
             this.CustomerEmail.ShadowDecoration.CustomizableEdges = customizableEdges40;
             this.CustomerEmail.Size = new System.Drawing.Size(155, 24);
-            this.CustomerEmail.TabIndex = 21;
+            this.CustomerEmail.TabIndex = 3;
             // 
             // CustomerPhone
             // 
@@ -819,7 +821,7 @@
             this.CustomerPhone.SelectedText = "";
             this.CustomerPhone.ShadowDecoration.CustomizableEdges = customizableEdges42;
             this.CustomerPhone.Size = new System.Drawing.Size(122, 24);
-            this.CustomerPhone.TabIndex = 20;
+            this.CustomerPhone.TabIndex = 2;
             // 
             // CustomerName
             // 
@@ -839,7 +841,7 @@
             this.CustomerName.SelectedText = "";
             this.CustomerName.ShadowDecoration.CustomizableEdges = customizableEdges44;
             this.CustomerName.Size = new System.Drawing.Size(145, 24);
-            this.CustomerName.TabIndex = 19;
+            this.CustomerName.TabIndex = 1;
             // 
             // CustomerID
             // 
@@ -849,6 +851,7 @@
             this.CustomerID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.CustomerID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.CustomerID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.CustomerID.Enabled = false;
             this.CustomerID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CustomerID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CustomerID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -859,7 +862,7 @@
             this.CustomerID.SelectedText = "";
             this.CustomerID.ShadowDecoration.CustomizableEdges = customizableEdges46;
             this.CustomerID.Size = new System.Drawing.Size(52, 25);
-            this.CustomerID.TabIndex = 18;
+            this.CustomerID.TabIndex = 0;
             // 
             // CustomerAddName
             // 
@@ -879,7 +882,7 @@
             this.CustomerAddName.SelectedText = "";
             this.CustomerAddName.ShadowDecoration.CustomizableEdges = customizableEdges48;
             this.CustomerAddName.Size = new System.Drawing.Size(115, 25);
-            this.CustomerAddName.TabIndex = 17;
+            this.CustomerAddName.TabIndex = 4;
             // 
             // CustomerAddEmail
             // 
@@ -899,7 +902,8 @@
             this.CustomerAddEmail.SelectedText = "";
             this.CustomerAddEmail.ShadowDecoration.CustomizableEdges = customizableEdges50;
             this.CustomerAddEmail.Size = new System.Drawing.Size(115, 25);
-            this.CustomerAddEmail.TabIndex = 23;
+            this.CustomerAddEmail.TabIndex = 6;
+            this.CustomerAddEmail.TextChanged += new System.EventHandler(this.CustomerAddEmail_TextChanged);
             // 
             // CustomerAddBTN
             // 
@@ -914,7 +918,7 @@
             this.CustomerAddBTN.Name = "CustomerAddBTN";
             this.CustomerAddBTN.ShadowDecoration.CustomizableEdges = customizableEdges52;
             this.CustomerAddBTN.Size = new System.Drawing.Size(85, 32);
-            this.CustomerAddBTN.TabIndex = 24;
+            this.CustomerAddBTN.TabIndex = 7;
             this.CustomerAddBTN.Text = "Add";
             this.CustomerAddBTN.Click += new System.EventHandler(this.CustomerAddBTN_Click);
             // 

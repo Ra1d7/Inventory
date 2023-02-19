@@ -34,6 +34,14 @@ namespace Inventory
             this.email = email;
         }
 
+        public Customer(int id, string name, string phoneNumber, string email)
+        {
+            Id = id;
+            this.name = name;
+            this.phoneNumber = phoneNumber;
+            this.email = email;
+        }
+
         internal object GetProperty(int index)
         {
             switch (index)

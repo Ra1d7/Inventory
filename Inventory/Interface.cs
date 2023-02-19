@@ -325,6 +325,11 @@ namespace Inventory
                     MessageBox.Show(ex.Message);
                 }
             }
+            else
+            {
+                MessageBox.Show("Invalid parameters");
+                textBoxes.ToList().ForEach(x => x.Text = "");
+            }
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -386,6 +391,38 @@ namespace Inventory
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private async void guna2Button1_Click(object sender, EventArgs e)
+        {
+            //confirm edit customer
+            Guna2TextBox[] textBoxes = {CustomerName, CustomerPhone, CustomerEmail };
+            if (textBoxes.All(x => x.Text.Length > 0))
+            {
+                var customer = new Customer(Convert.ToInt32(CustomerID.Text),CustomerName.Text, CustomerPhone.Text, CustomerEmail.Text);
+                try
+                {
+                    await Database.UpdateCustomer(customer);
+                    textBoxes.ToList().ForEach(x => x.Text = "");
+                    RefreshAll();
+                    CustomersTable.Refresh();
+                    MessageBox.Show("Successfully Updated Records!", "Records Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid parameters..");
+                textBoxes.ToList().ForEach(x => x.Text = "");
+            }
+        }
+
+        private void CustomerAddEmail_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

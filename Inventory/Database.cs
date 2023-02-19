@@ -201,5 +201,22 @@ namespace Inventory
                 return "Updated\t" + updated;
             }
         }
+        public static async Task UpdateCustomer(Customer customer)
+        {
+            using (SQLiteConnection myconnection = new SQLiteConnection(connectionString))
+            {
+                if (!(myconnection.State == System.Data.ConnectionState.Open)) { myconnection.Open(); }
+                string query = "UPDATE customers SET name = @name,phonenumber = @phone, email = @email WHERE id = @id";
+                SQLiteCommand cmd = new SQLiteCommand(query, myconnection);
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@id", customer.Id);
+                cmd.Parameters.AddWithValue("@name", customer.name);
+                cmd.Parameters.AddWithValue("@phone", customer.phoneNumber);
+                cmd.Parameters.AddWithValue("@email", customer.email);
+
+                string updated = (await cmd.ExecuteNonQueryAsync()).ToString();
+                myconnection.Close();
+            }
+        }
     }
 }
