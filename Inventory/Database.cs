@@ -88,7 +88,7 @@ namespace Inventory
                     {
                         while (resultReader.Read())
                         {
-                            customers.Add(new Customer(resultReader.GetInt32(0), resultReader.GetString(1), resultReader.GetString(2), resultReader.GetString(3), resultReader.GetString(4), resultReader.GetString(5)));
+                            customers.Add(new Customer(resultReader.GetInt32(0), resultReader.GetString(1), resultReader.GetString(2), resultReader.GetString(3), resultReader.GetInt32(4), resultReader.GetDecimal(5)));
                         }
                         return customers;
                     }
@@ -124,7 +124,7 @@ namespace Inventory
                 }
             };
         }
-        public static async Task<string> AddItem(string name, decimal price, int amount)
+        public static async Task<string> AddItem(Item item, int amount)
         {
             using (SQLiteConnection myconnection = new SQLiteConnection(connectionString))
             {
@@ -132,8 +132,8 @@ namespace Inventory
                 string query = "INSERT INTO items ('name','price','instock') VALUES (@name, @price, @amount)";
                 SQLiteCommand cmd = new SQLiteCommand(query, myconnection);
                 cmd.CommandText = query;
-                cmd.Parameters.AddWithValue("@name", name);
-                cmd.Parameters.AddWithValue("@price", price);
+                cmd.Parameters.AddWithValue("@name", item.name);
+                cmd.Parameters.AddWithValue("@price", item.price);
                 cmd.Parameters.AddWithValue("@amount", amount);
                 string updated = (await cmd.ExecuteNonQueryAsync()).ToString();
                 return "Updated\t" + updated;
@@ -184,6 +184,21 @@ namespace Inventory
 
                 string updated = (await cmd.ExecuteNonQueryAsync()).ToString();
                 myconnection.Close();
+            }
+        }
+        public static async Task<string> AddCustomer(Customer customer)
+        {
+            using (SQLiteConnection myconnection = new SQLiteConnection(connectionString))
+            {
+                if (!(myconnection.State == System.Data.ConnectionState.Open)) { myconnection.Open(); }
+                string query = "INSERT INTO customers (name,phonenumber,email) VALUES (@name, @phone, @email)";
+                SQLiteCommand cmd = new SQLiteCommand(query, myconnection);
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@name", customer.name);
+                cmd.Parameters.AddWithValue("@phone", customer.phoneNumber);
+                cmd.Parameters.AddWithValue("@email", customer.email);
+                string updated = (await cmd.ExecuteNonQueryAsync()).ToString();
+                return "Updated\t" + updated;
             }
         }
     }

@@ -145,7 +145,8 @@ namespace Inventory
 
                 if (Decimal.TryParse(itempricetextbox.Text, out decimal price) && int.TryParse(itemamounttext.Text, out int amount) && price > 0 && amount > 0)
                 {
-                    await Database.AddItem(itemnametextbox.Text, price, amount);
+                    Item item = new Item(itemnametextbox.Text, price);
+                    await Database.AddItem(item, amount);
                     RefreshAll();
                     itempricetextbox.Text = ""; itemamounttext.Text = ""; itemnametextbox.Text = "";
                 }
@@ -346,11 +347,40 @@ namespace Inventory
 
         private async void guna2Button4_Click(object sender, EventArgs e)
         {
+            //remove customer BTN
             try
             {
 
                 await Database.RemoveCustomer(Convert.ToInt32(CustomersTable.CurrentRow.Cells[0].Value));
                 RefreshAll();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private async void CustomerAddBTN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Guna2TextBox[] textBoxes = {CustomerAddName, CustomerAddPhone, CustomerAddEmail };
+                bool isNameValid = CustomerAddName.Text.Length > 0;
+                bool isPhoneValid = CustomerAddPhone.Text.Length > 0;
+                bool isEmailValid = CustomerAddEmail.Text.Length > 0;
+                bool[] checks = {isNameValid,isPhoneValid, isEmailValid};
+
+                if (checks.All(x => x == true))
+                {
+                    await Database.AddCustomer(new Customer(CustomerAddName.Text,CustomerAddPhone.Text,CustomerAddEmail.Text));
+                    textBoxes.ToList().ForEach(x => x.Text = "");
+                    RefreshAll();
+                }
+                else
+                {
+                    SystemSounds.Beep.Play();
+                    MessageBox.Show("Invalid parameters", "Error adding Customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {

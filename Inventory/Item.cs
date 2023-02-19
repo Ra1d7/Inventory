@@ -18,6 +18,12 @@
             this.Discounted = Discounted;
         }
 
+        public Item(string name, decimal price)
+        {
+            this.name = name;
+            this.price = price;
+        }
+
         internal object GetProperty(int index)
         {
             switch (index)

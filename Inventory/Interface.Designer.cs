@@ -121,14 +121,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.guna2vSeparator3 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.guna2vSeparator4 = new Guna.UI2.WinForms.Guna2VSeparator();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.CustomerAddPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.CustomerEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.CustomerPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.CustomerName = new Guna.UI2.WinForms.Guna2TextBox();
             this.CustomerID = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox7 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.CustomerAddName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.CustomerAddEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.CustomerAddBTN = new Guna.UI2.WinForms.Guna2Button();
             this.customersLBL = new System.Windows.Forms.Label();
             this.CustomersTable = new System.Windows.Forms.DataGridView();
             this.SellTab = new System.Windows.Forms.TabPage();
@@ -541,7 +541,7 @@
             this.AddItemBTN.ShadowDecoration.CustomizableEdges = customizableEdges26;
             this.AddItemBTN.Size = new System.Drawing.Size(85, 32);
             this.AddItemBTN.TabIndex = 7;
-            this.AddItemBTN.Text = "Add Item";
+            this.AddItemBTN.Text = "Add";
             this.AddItemBTN.Click += new System.EventHandler(this.AddItemBTN_Click);
             // 
             // label1
@@ -603,14 +603,14 @@
             this.CustomersTab.Controls.Add(this.label7);
             this.CustomersTab.Controls.Add(this.guna2vSeparator3);
             this.CustomersTab.Controls.Add(this.guna2vSeparator4);
-            this.CustomersTab.Controls.Add(this.guna2TextBox1);
+            this.CustomersTab.Controls.Add(this.CustomerAddPhone);
             this.CustomersTab.Controls.Add(this.CustomerEmail);
             this.CustomersTab.Controls.Add(this.CustomerPhone);
             this.CustomersTab.Controls.Add(this.CustomerName);
             this.CustomersTab.Controls.Add(this.CustomerID);
-            this.CustomersTab.Controls.Add(this.guna2TextBox6);
-            this.CustomersTab.Controls.Add(this.guna2TextBox7);
-            this.CustomersTab.Controls.Add(this.guna2Button3);
+            this.CustomersTab.Controls.Add(this.CustomerAddName);
+            this.CustomersTab.Controls.Add(this.CustomerAddEmail);
+            this.CustomersTab.Controls.Add(this.CustomerAddBTN);
             this.CustomersTab.Controls.Add(this.customersLBL);
             this.CustomersTab.Controls.Add(this.CustomersTable);
             this.CustomersTab.Location = new System.Drawing.Point(184, 4);
@@ -761,25 +761,25 @@
             this.guna2vSeparator4.Size = new System.Drawing.Size(10, 188);
             this.guna2vSeparator4.TabIndex = 25;
             // 
-            // guna2TextBox1
+            // CustomerAddPhone
             // 
-            this.guna2TextBox1.CustomizableEdges = customizableEdges37;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(684, 466);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "price";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges38;
-            this.guna2TextBox1.Size = new System.Drawing.Size(115, 25);
-            this.guna2TextBox1.TabIndex = 22;
+            this.CustomerAddPhone.CustomizableEdges = customizableEdges37;
+            this.CustomerAddPhone.DefaultText = "";
+            this.CustomerAddPhone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.CustomerAddPhone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.CustomerAddPhone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.CustomerAddPhone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.CustomerAddPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CustomerAddPhone.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CustomerAddPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CustomerAddPhone.Location = new System.Drawing.Point(684, 466);
+            this.CustomerAddPhone.Name = "CustomerAddPhone";
+            this.CustomerAddPhone.PasswordChar = '\0';
+            this.CustomerAddPhone.PlaceholderText = "phone number";
+            this.CustomerAddPhone.SelectedText = "";
+            this.CustomerAddPhone.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            this.CustomerAddPhone.Size = new System.Drawing.Size(115, 25);
+            this.CustomerAddPhone.TabIndex = 22;
             // 
             // CustomerEmail
             // 
@@ -861,61 +861,62 @@
             this.CustomerID.Size = new System.Drawing.Size(52, 25);
             this.CustomerID.TabIndex = 18;
             // 
-            // guna2TextBox6
+            // CustomerAddName
             // 
-            this.guna2TextBox6.CustomizableEdges = customizableEdges47;
-            this.guna2TextBox6.DefaultText = "";
-            this.guna2TextBox6.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox6.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox6.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2TextBox6.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox6.Location = new System.Drawing.Point(684, 427);
-            this.guna2TextBox6.Name = "guna2TextBox6";
-            this.guna2TextBox6.PasswordChar = '\0';
-            this.guna2TextBox6.PlaceholderText = "name";
-            this.guna2TextBox6.SelectedText = "";
-            this.guna2TextBox6.ShadowDecoration.CustomizableEdges = customizableEdges48;
-            this.guna2TextBox6.Size = new System.Drawing.Size(115, 25);
-            this.guna2TextBox6.TabIndex = 17;
+            this.CustomerAddName.CustomizableEdges = customizableEdges47;
+            this.CustomerAddName.DefaultText = "";
+            this.CustomerAddName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.CustomerAddName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.CustomerAddName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.CustomerAddName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.CustomerAddName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CustomerAddName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CustomerAddName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CustomerAddName.Location = new System.Drawing.Point(684, 427);
+            this.CustomerAddName.Name = "CustomerAddName";
+            this.CustomerAddName.PasswordChar = '\0';
+            this.CustomerAddName.PlaceholderText = "name";
+            this.CustomerAddName.SelectedText = "";
+            this.CustomerAddName.ShadowDecoration.CustomizableEdges = customizableEdges48;
+            this.CustomerAddName.Size = new System.Drawing.Size(115, 25);
+            this.CustomerAddName.TabIndex = 17;
             // 
-            // guna2TextBox7
+            // CustomerAddEmail
             // 
-            this.guna2TextBox7.CustomizableEdges = customizableEdges49;
-            this.guna2TextBox7.DefaultText = "";
-            this.guna2TextBox7.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox7.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox7.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2TextBox7.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox7.Location = new System.Drawing.Point(684, 505);
-            this.guna2TextBox7.Name = "guna2TextBox7";
-            this.guna2TextBox7.PasswordChar = '\0';
-            this.guna2TextBox7.PlaceholderText = "amount";
-            this.guna2TextBox7.SelectedText = "";
-            this.guna2TextBox7.ShadowDecoration.CustomizableEdges = customizableEdges50;
-            this.guna2TextBox7.Size = new System.Drawing.Size(115, 25);
-            this.guna2TextBox7.TabIndex = 23;
+            this.CustomerAddEmail.CustomizableEdges = customizableEdges49;
+            this.CustomerAddEmail.DefaultText = "";
+            this.CustomerAddEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.CustomerAddEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.CustomerAddEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.CustomerAddEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.CustomerAddEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CustomerAddEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CustomerAddEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CustomerAddEmail.Location = new System.Drawing.Point(684, 505);
+            this.CustomerAddEmail.Name = "CustomerAddEmail";
+            this.CustomerAddEmail.PasswordChar = '\0';
+            this.CustomerAddEmail.PlaceholderText = "email";
+            this.CustomerAddEmail.SelectedText = "";
+            this.CustomerAddEmail.ShadowDecoration.CustomizableEdges = customizableEdges50;
+            this.CustomerAddEmail.Size = new System.Drawing.Size(115, 25);
+            this.CustomerAddEmail.TabIndex = 23;
             // 
-            // guna2Button3
+            // CustomerAddBTN
             // 
-            this.guna2Button3.CustomizableEdges = customizableEdges51;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(696, 544);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges52;
-            this.guna2Button3.Size = new System.Drawing.Size(85, 32);
-            this.guna2Button3.TabIndex = 24;
-            this.guna2Button3.Text = "Add Item";
+            this.CustomerAddBTN.CustomizableEdges = customizableEdges51;
+            this.CustomerAddBTN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.CustomerAddBTN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.CustomerAddBTN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.CustomerAddBTN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.CustomerAddBTN.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CustomerAddBTN.ForeColor = System.Drawing.Color.White;
+            this.CustomerAddBTN.Location = new System.Drawing.Point(696, 544);
+            this.CustomerAddBTN.Name = "CustomerAddBTN";
+            this.CustomerAddBTN.ShadowDecoration.CustomizableEdges = customizableEdges52;
+            this.CustomerAddBTN.Size = new System.Drawing.Size(85, 32);
+            this.CustomerAddBTN.TabIndex = 24;
+            this.CustomerAddBTN.Text = "Add";
+            this.CustomerAddBTN.Click += new System.EventHandler(this.CustomerAddBTN_Click);
             // 
             // customersLBL
             // 
@@ -1138,13 +1139,13 @@
         private Label label7;
         private Guna.UI2.WinForms.Guna2VSeparator guna2vSeparator3;
         private Guna.UI2.WinForms.Guna2VSeparator guna2vSeparator4;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox CustomerAddPhone;
         private Guna.UI2.WinForms.Guna2TextBox CustomerEmail;
         private Guna.UI2.WinForms.Guna2TextBox CustomerPhone;
         private Guna.UI2.WinForms.Guna2TextBox CustomerName;
         private Guna.UI2.WinForms.Guna2TextBox CustomerID;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox6;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox7;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2TextBox CustomerAddName;
+        private Guna.UI2.WinForms.Guna2TextBox CustomerAddEmail;
+        private Guna.UI2.WinForms.Guna2Button CustomerAddBTN;
     }
 }
