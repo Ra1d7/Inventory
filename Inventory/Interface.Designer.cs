@@ -36,15 +36,47 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.loggedinuserLBL = new System.Windows.Forms.Label();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.InventoryTab = new System.Windows.Forms.TabPage();
+            this.ConfirmEdit = new Guna.UI2.WinForms.Guna2Button();
+            this.EditBTN = new Guna.UI2.WinForms.Guna2Button();
+            this.DescToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.SortByBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.UISortLBL = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.UIAddLBL = new System.Windows.Forms.Label();
+            this.RemoveItemBTN = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2vSeparator2 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.guna2vSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.itempricetextbox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.EditinStock = new Guna.UI2.WinForms.Guna2TextBox();
+            this.EditPrice = new Guna.UI2.WinForms.Guna2TextBox();
+            this.EditName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.EditID = new Guna.UI2.WinForms.Guna2TextBox();
             this.itemnametextbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.itemamounttext = new Guna.UI2.WinForms.Guna2TextBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
@@ -121,8 +153,22 @@
             // 
             // InventoryTab
             // 
+            this.InventoryTab.Controls.Add(this.ConfirmEdit);
+            this.InventoryTab.Controls.Add(this.EditBTN);
+            this.InventoryTab.Controls.Add(this.DescToggleSwitch);
+            this.InventoryTab.Controls.Add(this.SortByBox);
+            this.InventoryTab.Controls.Add(this.label3);
+            this.InventoryTab.Controls.Add(this.UISortLBL);
+            this.InventoryTab.Controls.Add(this.label2);
+            this.InventoryTab.Controls.Add(this.UIAddLBL);
+            this.InventoryTab.Controls.Add(this.RemoveItemBTN);
+            this.InventoryTab.Controls.Add(this.guna2vSeparator2);
             this.InventoryTab.Controls.Add(this.guna2vSeparator1);
             this.InventoryTab.Controls.Add(this.itempricetextbox);
+            this.InventoryTab.Controls.Add(this.EditinStock);
+            this.InventoryTab.Controls.Add(this.EditPrice);
+            this.InventoryTab.Controls.Add(this.EditName);
+            this.InventoryTab.Controls.Add(this.EditID);
             this.InventoryTab.Controls.Add(this.itemnametextbox);
             this.InventoryTab.Controls.Add(this.itemamounttext);
             this.InventoryTab.Controls.Add(this.splitter1);
@@ -136,17 +182,160 @@
             this.InventoryTab.TabIndex = 0;
             this.InventoryTab.Text = "Inventory";
             this.InventoryTab.UseVisualStyleBackColor = true;
+            this.InventoryTab.Click += new System.EventHandler(this.InventoryTab_Click);
+            // 
+            // ConfirmEdit
+            // 
+            this.ConfirmEdit.CustomizableEdges = customizableEdges1;
+            this.ConfirmEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ConfirmEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ConfirmEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ConfirmEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ConfirmEdit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.ConfirmEdit.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ConfirmEdit.ForeColor = System.Drawing.Color.White;
+            this.ConfirmEdit.Location = new System.Drawing.Point(519, 504);
+            this.ConfirmEdit.Name = "ConfirmEdit";
+            this.ConfirmEdit.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.ConfirmEdit.Size = new System.Drawing.Size(131, 39);
+            this.ConfirmEdit.TabIndex = 16;
+            this.ConfirmEdit.Text = "Confirm";
+            this.ConfirmEdit.Click += new System.EventHandler(this.ConfirmEdit_Click);
+            // 
+            // EditBTN
+            // 
+            this.EditBTN.CustomizableEdges = customizableEdges3;
+            this.EditBTN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.EditBTN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.EditBTN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.EditBTN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.EditBTN.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EditBTN.ForeColor = System.Drawing.Color.White;
+            this.EditBTN.Location = new System.Drawing.Point(167, 504);
+            this.EditBTN.Name = "EditBTN";
+            this.EditBTN.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.EditBTN.Size = new System.Drawing.Size(131, 39);
+            this.EditBTN.TabIndex = 16;
+            this.EditBTN.Text = "Edit selected";
+            this.EditBTN.Click += new System.EventHandler(this.EditBTN_Click);
+            // 
+            // DescToggleSwitch
+            // 
+            this.DescToggleSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DescToggleSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DescToggleSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.DescToggleSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.DescToggleSwitch.CustomizableEdges = customizableEdges5;
+            this.DescToggleSwitch.Location = new System.Drawing.Point(26, 472);
+            this.DescToggleSwitch.Name = "DescToggleSwitch";
+            this.DescToggleSwitch.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.DescToggleSwitch.Size = new System.Drawing.Size(35, 20);
+            this.DescToggleSwitch.TabIndex = 15;
+            this.DescToggleSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.DescToggleSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.DescToggleSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.DescToggleSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.DescToggleSwitch.CheckedChanged += new System.EventHandler(this.DescToggleSwitch_CheckedChanged);
+            // 
+            // SortByBox
+            // 
+            this.SortByBox.BackColor = System.Drawing.Color.Transparent;
+            this.SortByBox.CustomizableEdges = customizableEdges7;
+            this.SortByBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.SortByBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SortByBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SortByBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SortByBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SortByBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.SortByBox.ItemHeight = 30;
+            this.SortByBox.Location = new System.Drawing.Point(12, 430);
+            this.SortByBox.Name = "SortByBox";
+            this.SortByBox.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.SortByBox.Size = new System.Drawing.Size(125, 36);
+            this.SortByBox.TabIndex = 14;
+            this.SortByBox.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
+            this.SortByBox.DataSourceChanged += new System.EventHandler(this.SortByBox_DataSourceChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(402, 411);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 16);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Edit";
+            this.label3.Click += new System.EventHandler(this.UIAddLBL_Click);
+            // 
+            // UISortLBL
+            // 
+            this.UISortLBL.AutoSize = true;
+            this.UISortLBL.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.UISortLBL.Location = new System.Drawing.Point(52, 411);
+            this.UISortLBL.Name = "UISortLBL";
+            this.UISortLBL.Size = new System.Drawing.Size(48, 16);
+            this.UISortLBL.TabIndex = 13;
+            this.UISortLBL.Text = "Sort by:";
+            this.UISortLBL.Click += new System.EventHandler(this.UIAddLBL_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(67, 474);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 16);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Descending";
+            this.label2.Click += new System.EventHandler(this.UIAddLBL_Click);
+            // 
+            // UIAddLBL
+            // 
+            this.UIAddLBL.AutoSize = true;
+            this.UIAddLBL.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.UIAddLBL.Location = new System.Drawing.Point(724, 407);
+            this.UIAddLBL.Name = "UIAddLBL";
+            this.UIAddLBL.Size = new System.Drawing.Size(28, 16);
+            this.UIAddLBL.TabIndex = 13;
+            this.UIAddLBL.Text = "Add";
+            this.UIAddLBL.Click += new System.EventHandler(this.UIAddLBL_Click);
+            // 
+            // RemoveItemBTN
+            // 
+            this.RemoveItemBTN.CustomizableEdges = customizableEdges9;
+            this.RemoveItemBTN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.RemoveItemBTN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.RemoveItemBTN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.RemoveItemBTN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.RemoveItemBTN.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.RemoveItemBTN.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RemoveItemBTN.ForeColor = System.Drawing.Color.White;
+            this.RemoveItemBTN.Location = new System.Drawing.Point(694, 7);
+            this.RemoveItemBTN.Name = "RemoveItemBTN";
+            this.RemoveItemBTN.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            this.RemoveItemBTN.Size = new System.Drawing.Size(117, 30);
+            this.RemoveItemBTN.TabIndex = 12;
+            this.RemoveItemBTN.Text = "Remove Selected";
+            this.RemoveItemBTN.Click += new System.EventHandler(this.RemoveItemBTN_Click);
+            // 
+            // guna2vSeparator2
+            // 
+            this.guna2vSeparator2.Location = new System.Drawing.Point(151, 406);
+            this.guna2vSeparator2.Name = "guna2vSeparator2";
+            this.guna2vSeparator2.Size = new System.Drawing.Size(10, 188);
+            this.guna2vSeparator2.TabIndex = 11;
             // 
             // guna2vSeparator1
             // 
-            this.guna2vSeparator1.Location = new System.Drawing.Point(664, 409);
+            this.guna2vSeparator1.Location = new System.Drawing.Point(666, 410);
             this.guna2vSeparator1.Name = "guna2vSeparator1";
             this.guna2vSeparator1.Size = new System.Drawing.Size(10, 188);
             this.guna2vSeparator1.TabIndex = 11;
             // 
             // itempricetextbox
             // 
-            this.itempricetextbox.CustomizableEdges = customizableEdges1;
+            this.itempricetextbox.CustomizableEdges = customizableEdges11;
             this.itempricetextbox.DefaultText = "";
             this.itempricetextbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.itempricetextbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -160,13 +349,93 @@
             this.itempricetextbox.PasswordChar = '\0';
             this.itempricetextbox.PlaceholderText = "price";
             this.itempricetextbox.SelectedText = "";
-            this.itempricetextbox.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.itempricetextbox.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.itempricetextbox.Size = new System.Drawing.Size(115, 25);
-            this.itempricetextbox.TabIndex = 6;
+            this.itempricetextbox.TabIndex = 5;
+            // 
+            // EditinStock
+            // 
+            this.EditinStock.CustomizableEdges = customizableEdges13;
+            this.EditinStock.DefaultText = "inStock";
+            this.EditinStock.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EditinStock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EditinStock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditinStock.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditinStock.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.EditinStock.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EditinStock.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.EditinStock.Location = new System.Drawing.Point(550, 441);
+            this.EditinStock.Name = "EditinStock";
+            this.EditinStock.PasswordChar = '\0';
+            this.EditinStock.PlaceholderText = "name";
+            this.EditinStock.SelectedText = "";
+            this.EditinStock.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            this.EditinStock.Size = new System.Drawing.Size(103, 25);
+            this.EditinStock.TabIndex = 4;
+            // 
+            // EditPrice
+            // 
+            this.EditPrice.CustomizableEdges = customizableEdges15;
+            this.EditPrice.DefaultText = "price";
+            this.EditPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EditPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EditPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.EditPrice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EditPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.EditPrice.Location = new System.Drawing.Point(444, 441);
+            this.EditPrice.Name = "EditPrice";
+            this.EditPrice.PasswordChar = '\0';
+            this.EditPrice.PlaceholderText = "name";
+            this.EditPrice.SelectedText = "";
+            this.EditPrice.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            this.EditPrice.Size = new System.Drawing.Size(100, 25);
+            this.EditPrice.TabIndex = 4;
+            // 
+            // EditName
+            // 
+            this.EditName.CustomizableEdges = customizableEdges17;
+            this.EditName.DefaultText = "name";
+            this.EditName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EditName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EditName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.EditName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EditName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.EditName.Location = new System.Drawing.Point(224, 441);
+            this.EditName.Name = "EditName";
+            this.EditName.PasswordChar = '\0';
+            this.EditName.PlaceholderText = "name";
+            this.EditName.SelectedText = "";
+            this.EditName.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            this.EditName.Size = new System.Drawing.Size(214, 25);
+            this.EditName.TabIndex = 4;
+            // 
+            // EditID
+            // 
+            this.EditID.CustomizableEdges = customizableEdges19;
+            this.EditID.DefaultText = "id";
+            this.EditID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EditID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EditID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.EditID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EditID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.EditID.Location = new System.Drawing.Point(166, 441);
+            this.EditID.Name = "EditID";
+            this.EditID.PasswordChar = '\0';
+            this.EditID.PlaceholderText = "name";
+            this.EditID.SelectedText = "";
+            this.EditID.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            this.EditID.Size = new System.Drawing.Size(52, 25);
+            this.EditID.TabIndex = 4;
             // 
             // itemnametextbox
             // 
-            this.itemnametextbox.CustomizableEdges = customizableEdges3;
+            this.itemnametextbox.CustomizableEdges = customizableEdges21;
             this.itemnametextbox.DefaultText = "";
             this.itemnametextbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.itemnametextbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -180,13 +449,13 @@
             this.itemnametextbox.PasswordChar = '\0';
             this.itemnametextbox.PlaceholderText = "name";
             this.itemnametextbox.SelectedText = "";
-            this.itemnametextbox.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.itemnametextbox.ShadowDecoration.CustomizableEdges = customizableEdges22;
             this.itemnametextbox.Size = new System.Drawing.Size(115, 25);
             this.itemnametextbox.TabIndex = 4;
             // 
             // itemamounttext
             // 
-            this.itemamounttext.CustomizableEdges = customizableEdges5;
+            this.itemamounttext.CustomizableEdges = customizableEdges23;
             this.itemamounttext.DefaultText = "";
             this.itemamounttext.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.itemamounttext.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -200,9 +469,10 @@
             this.itemamounttext.PasswordChar = '\0';
             this.itemamounttext.PlaceholderText = "amount";
             this.itemamounttext.SelectedText = "";
-            this.itemamounttext.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.itemamounttext.ShadowDecoration.CustomizableEdges = customizableEdges24;
             this.itemamounttext.Size = new System.Drawing.Size(115, 25);
-            this.itemamounttext.TabIndex = 9;
+            this.itemamounttext.TabIndex = 6;
+            this.itemamounttext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.itemamounttext_KeyPress);
             // 
             // splitter1
             // 
@@ -214,7 +484,7 @@
             // 
             // AddItemBTN
             // 
-            this.AddItemBTN.CustomizableEdges = customizableEdges7;
+            this.AddItemBTN.CustomizableEdges = customizableEdges25;
             this.AddItemBTN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.AddItemBTN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.AddItemBTN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -223,9 +493,9 @@
             this.AddItemBTN.ForeColor = System.Drawing.Color.White;
             this.AddItemBTN.Location = new System.Drawing.Point(694, 543);
             this.AddItemBTN.Name = "AddItemBTN";
-            this.AddItemBTN.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.AddItemBTN.ShadowDecoration.CustomizableEdges = customizableEdges26;
             this.AddItemBTN.Size = new System.Drawing.Size(85, 32);
-            this.AddItemBTN.TabIndex = 8;
+            this.AddItemBTN.TabIndex = 7;
             this.AddItemBTN.Text = "Add Item";
             this.AddItemBTN.Click += new System.EventHandler(this.AddItemBTN_Click);
             // 
@@ -243,11 +513,14 @@
             // InventoryTable
             // 
             this.InventoryTable.AllowUserToAddRows = false;
-            this.InventoryTable.AllowUserToOrderColumns = true;
+            this.InventoryTable.AllowUserToDeleteRows = false;
+            this.InventoryTable.AllowUserToResizeColumns = false;
+            this.InventoryTable.AllowUserToResizeRows = false;
             this.InventoryTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.InventoryTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.InventoryTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.InventoryTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.InventoryTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.InventoryTable.Location = new System.Drawing.Point(9, 44);
             this.InventoryTable.Name = "InventoryTable";
             this.InventoryTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -261,14 +534,16 @@
             this.InventoryTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.InventoryTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.InventoryTable.RowTemplate.Height = 25;
-            this.InventoryTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.InventoryTable.ShowEditingIcon = false;
             this.InventoryTable.Size = new System.Drawing.Size(800, 360);
             this.InventoryTable.TabIndex = 0;
             this.InventoryTable.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.InventoryTable_CellBeginEdit);
+            this.InventoryTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.InventoryTable_CellContentClick);
             this.InventoryTable.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.InventoryTable_CellEndEdit);
             this.InventoryTable.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.InventoryTable_CellValidating);
             this.InventoryTable.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.InventoryTable_DataError);
             this.InventoryTable.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.InventoryTable_RowValidating);
+            this.InventoryTable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InventoryTable_KeyPress);
             // 
             // CustomersTab
             // 
@@ -360,7 +635,7 @@
             this.minimizeBTN.Image = global::Inventory.Properties.Resources.minimize;
             this.minimizeBTN.Location = new System.Drawing.Point(946, 3);
             this.minimizeBTN.Name = "minimizeBTN";
-            this.minimizeBTN.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            this.minimizeBTN.ShadowDecoration.CustomizableEdges = customizableEdges27;
             this.minimizeBTN.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.minimizeBTN.Size = new System.Drawing.Size(24, 24);
             this.minimizeBTN.TabIndex = 9;
@@ -380,7 +655,7 @@
             this.exitBTN.Image = global::Inventory.Properties.Resources.asd1;
             this.exitBTN.Location = new System.Drawing.Point(973, 3);
             this.exitBTN.Name = "exitBTN";
-            this.exitBTN.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            this.exitBTN.ShadowDecoration.CustomizableEdges = customizableEdges28;
             this.exitBTN.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.exitBTN.Size = new System.Drawing.Size(24, 24);
             this.exitBTN.TabIndex = 9;
@@ -477,5 +752,19 @@
         private Guna.UI2.WinForms.Guna2TextBox itemamounttext;
         private Splitter splitter1;
         private Guna.UI2.WinForms.Guna2VSeparator guna2vSeparator1;
+        private Guna.UI2.WinForms.Guna2ComboBox SortByBox;
+        private Label UIAddLBL;
+        private Guna.UI2.WinForms.Guna2Button RemoveItemBTN;
+        private Label UISortLBL;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch DescToggleSwitch;
+        private Label label2;
+        private Label label3;
+        private Guna.UI2.WinForms.Guna2VSeparator guna2vSeparator2;
+        private Guna.UI2.WinForms.Guna2Button EditBTN;
+        private Guna.UI2.WinForms.Guna2TextBox EditinStock;
+        private Guna.UI2.WinForms.Guna2TextBox EditPrice;
+        private Guna.UI2.WinForms.Guna2TextBox EditName;
+        private Guna.UI2.WinForms.Guna2TextBox EditID;
+        private Guna.UI2.WinForms.Guna2Button ConfirmEdit;
     }
 }

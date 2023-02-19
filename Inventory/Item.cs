@@ -17,5 +17,19 @@
             this.reOrdered = reOrdered;
             this.Discounted = Discounted;
         }
+
+        internal object GetProperty(int index)
+        {
+            switch (index)
+            {
+                case 0: return id;
+                case 1: return name;
+                case 2: return price;
+                case 3: return inStock;
+                case 4: return reOrdered;
+                case 5: return Discounted;
+            }
+            return null;
+        }
     }
 }

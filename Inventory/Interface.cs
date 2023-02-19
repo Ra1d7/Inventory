@@ -1,4 +1,5 @@
-﻿using System.Media;
+﻿using Guna.UI2.WinForms;
+using System.Media;
 using System.Runtime.InteropServices;
 
 namespace Inventory
@@ -33,8 +34,7 @@ namespace Inventory
         private async void Interface_Load(object sender, EventArgs e)
         {
             loggedinuserLBL.Text = (await Database.GetCredentials())[0];
-            PopulateTables();
-            UpdateLabels();
+            RefreshAll();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -131,16 +131,16 @@ namespace Inventory
 
         private async void AddItemBTN_Click(object sender, EventArgs e)
         {
-            if (Decimal.TryParse(itempricetextbox.Text, out decimal price) && int.TryParse(itemamounttext.Text, out int amount) && price >0 && amount >0)
+            if (Decimal.TryParse(itempricetextbox.Text, out decimal price) && int.TryParse(itemamounttext.Text, out int amount) && price > 0 && amount > 0)
             {
                 await Database.AddItem(itemnametextbox.Text, price, amount);
                 RefreshAll();
-                itempricetextbox.Text = ""; itemamounttext.Text = "";itemnametextbox.Text = "";
+                itempricetextbox.Text = ""; itemamounttext.Text = ""; itemnametextbox.Text = "";
             }
             else
             {
                 SystemSounds.Beep.Play();
-                MessageBox.Show("Invalid parameters","Error adding item",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Invalid parameters", "Error adding item", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -154,6 +154,8 @@ namespace Inventory
             UpdateLabels();
             InventoryTable.Refresh();
             customersTable.Refresh();
+            SortByBox.Refresh();
+            UpdateSortBox();
         }
 
         private async void InventoryTable_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -169,16 +171,11 @@ namespace Inventory
 
         private void InventoryTable_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            
+
         }
 
         private void InventoryTable_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            if(e.ColumnIndex != 1)
-            {
-                int.TryParse((string)e.FormattedValue,out int result);
-                if (!(result > 0)) { e.Cancel = true; MessageBox.Show("Value cannot be negative!","Negative value error",MessageBoxButtons.OK,MessageBoxIcon.Error); }
-            }
         }
 
         private void InventoryTable_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
@@ -188,7 +185,111 @@ namespace Inventory
 
         private void InventoryTable_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            MessageBox.Show("the value you entered is not of correct format","invalid cell",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            MessageBox.Show("the value you entered is not of correct format", "invalid cell", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void UIAddLBL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var items = await Database.GetInventory();
+            InventoryTable.DataSource = DescToggleSwitch.Checked ? items.OrderByDescending(x => x.GetProperty(SortByBox.SelectedIndex)).ToList() : items.OrderBy(x => x.GetProperty(SortByBox.SelectedIndex)).ToList();
+            InventoryTable.Refresh();
+        }
+
+        private void SortByBox_DataSourceChanged(object sender, EventArgs e)
+        {
+
+        }
+        private async Task UpdateSortBox()
+        {
+            if (SortByBox.Items.Count == 0)
+            {
+                int nColumns = InventoryTable.Columns.Count;
+                for (int i = 0; i < nColumns; i++)
+                {
+                    SortByBox.Items.Add(InventoryTable.Columns[i].Name);
+                }
+                SortByBox.Refresh();
+            }
+        }
+
+        private void InventoryTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private async void DescToggleSwitch_CheckedChanged(object sender, EventArgs e)
+        {
+            RefreshAll();
+        }
+
+        private async void RemoveItemBTN_Click(object sender, EventArgs e)
+        {
+            await Database.RemoveItem(Convert.ToInt32(InventoryTable.CurrentRow.Cells[0].Value));
+            RefreshAll();
+        }
+
+        private void itemamounttext_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                AddItemBTN.PerformClick();
+            }
+        }
+
+        private void InventoryTable_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //hi
+        }
+
+        private void InventoryTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditBTN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Guna2TextBox[] textBoxes = { EditID, EditName, EditPrice, EditinStock };
+                for (int i = 0; i < textBoxes.Length; i++)
+                {
+                    textBoxes[i].Text = InventoryTable.CurrentRow.Cells[i].Value.ToString();
+                }
+
+            }
+            catch
+            {
+                //no row selected
+            }
+        }
+
+        private async void ConfirmEdit_Click(object sender, EventArgs e)
+        {
+            Guna2TextBox[] textBoxes = { EditID, EditName, EditPrice, EditinStock };
+            bool IDValid = int.TryParse(EditID.Text, out int id);
+            bool NameValid = EditName.Text.Length > 0;
+            bool PriceValid = decimal.TryParse(EditPrice.Text, out decimal price);
+            bool inStockValid = int.TryParse(EditinStock.Text, out int inStock);
+            bool[] checks = { IDValid, NameValid, PriceValid, inStockValid };
+            if (checks.All(x => x == true))
+            {
+                var item = new Item(id, EditName.Text, price, inStock, 0, 0);
+                try
+                {
+                await Database.UpdateItem(item);
+                textBoxes.ToList().ForEach(x => x.Text = "");
+                RefreshAll();
+                MessageBox.Show("Successfully Updated Records!","Records Update",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
