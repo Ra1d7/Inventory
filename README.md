@@ -1,6 +1,8 @@
 # Inventory!
 
-![Inventorydark](https://user-images.githubusercontent.com/25421570/220009056-346cb9cd-f5d0-40b2-bb1c-2cfcbe124d87.png)
+<p align="center" width="100%">
+    <img src="https://user-images.githubusercontent.com/25421570/220009056-346cb9cd-f5d0-40b2-bb1c-2cfcbe124d87.png"> 
+</p>
 
 ## Summery
 The C# application is designed to help manage sales for a business. The application uses a SQLite database that is created each time the application is built, to store data about products and customers.
