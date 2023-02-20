@@ -4,7 +4,6 @@
     <img src="https://user-images.githubusercontent.com/25421570/220009056-346cb9cd-f5d0-40b2-bb1c-2cfcbe124d87.png"> 
 </p>
 
-## UI
 <p align="center" width="100%">
     <img src="https://user-images.githubusercontent.com/25421570/220010642-2bcee091-8393-407b-a5fd-7d5840d0df7f.jpg"> 
 </p>
