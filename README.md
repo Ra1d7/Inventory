@@ -4,6 +4,18 @@
     <img src="https://user-images.githubusercontent.com/25421570/220009056-346cb9cd-f5d0-40b2-bb1c-2cfcbe124d87.png"> 
 </p>
 
+## UI
+<p align="center" width="100%">
+    <img src="https://user-images.githubusercontent.com/25421570/220010642-2bcee091-8393-407b-a5fd-7d5840d0df7f.jpg"> 
+</p>
+
+<p align="center" width="100%">
+    <img src="https://user-images.githubusercontent.com/25421570/220010695-d8c9d8f1-d208-4ef5-9bd3-3d27dbf8462e.jpg"> 
+</p>
+<p align="center" width="100%">
+    <img src="https://user-images.githubusercontent.com/25421570/220010760-7377a1d9-cb38-4a22-a1c3-588462210c3e.jpg"> 
+</p>
+
 ## Summery
 The C# application is designed to help manage sales for a business. The application uses a SQLite database that is created each time the application is built, to store data about products and customers.
 
